@@ -1,0 +1,33 @@
+/* BOTÓN VOLVER */
+
+.back-link {
+
+  background: #8B5CF6;
+
+  color: white;
+
+  padding: 10px 20px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+
+  font-weight: 500;
+
+  display: inline-block;
+
+  margin-bottom: 25px;
+}
+
+/* HOVER */
+
+.back-link:hover {
+
+  background: #7C3AED;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
