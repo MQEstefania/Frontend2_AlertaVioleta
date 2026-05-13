@@ -1,8 +1,77 @@
-/* BOTÓN VOLVER */
+.auth-page {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 40px;
+
+  background:
+    linear-gradient(
+      rgba(109,63,209,0.08),
+      rgba(184,77,255,0.08)
+    );
+}
+
+.auth-card {
+
+  background: white;
+
+  width: 100%;
+  max-width: 750px;
+
+  padding: 45px;
+
+  border-radius: 30px;
+}
+
+.auth-title {
+
+  color: #6d3fd1;
+
+  margin-bottom: 25px;
+
+  font-weight: bold;
+}
+
+.form-control {
+
+  border-radius: 14px;
+
+  padding: 12px;
+}
+
+.btn-purple {
+
+  background: #6d3fd1;
+
+  color: white;
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 14px;
+}
+
+.btn-purple:hover {
+
+  background: #5c32ba;
+
+  color: white;
+}
 
 .back-link {
 
-  background: #8B5CF6;
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  background: #6d3fd1;
 
   color: white;
 
@@ -11,23 +80,4 @@
   border-radius: 25px;
 
   text-decoration: none;
-
-  transition: all 0.3s ease;
-
-  font-weight: 500;
-
-  display: inline-block;
-
-  margin-bottom: 25px;
-}
-
-/* HOVER */
-
-.back-link:hover {
-
-  background: #7C3AED;
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }

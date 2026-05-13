@@ -1,45 +1,72 @@
-// Importar rutas
-import { Routes, Route } from 'react-router-dom'
+import {
 
-// Importar páginas
+  BrowserRouter,
+  Routes,
+  Route
+
+} from 'react-router-dom'
+
 import Home from './pages/Home'
+
 import UsuariaLogin from './pages/UsuariaLogin'
+
 import UsuariaRegistro from './pages/UsuariaRegistro'
+
+import Dashboard from './pages/Dashboard'
+
 import ReportarCaso from './pages/ReportarCaso'
+
 import AdminLogin from './pages/AdminLogin'
+
 import AdminDashboard from './pages/AdminDashboard'
 
 function App() {
 
   return (
 
-    // Todas las rutas del proyecto
-    <Routes>
+    <BrowserRouter>
 
-      {/* Página principal */}
-      <Route path='/' element={<Home />} />
+      <Routes>
 
-      {/* Login usuarias */}
-      <Route path='/login' element={<UsuariaLogin />} />
+        <Route
+          path='/'
+          element={<Home />}
+        />
 
-      {/* Registro */}
-      <Route path='/registro' element={<UsuariaRegistro />} />
+        <Route
+          path='/login'
+          element={<UsuariaLogin />}
+        />
 
-      {/* Reportar */}
-      <Route path='/reportar' element={<ReportarCaso />} />
+        <Route
+          path='/registro'
+          element={<UsuariaRegistro />}
+        />
 
-      {/* Admin */}
-      <Route path='/admin' element={<AdminLogin />} />
+        <Route
+          path='/dashboard'
+          element={<Dashboard />}
+        />
 
-      {/* Dashboard admin */}
-      <Route
-        path='/admin-dashboard'
-        element={<AdminDashboard />}
-      />
+        <Route
+          path='/reportar'
+          element={<ReportarCaso />}
+        />
 
-    </Routes>
+        <Route
+          path='/admin'
+          element={<AdminLogin />}
+        />
+
+        <Route
+          path='/admin-dashboard'
+          element={<AdminDashboard />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   )
 }
 
-// Exportar componente
 export default App

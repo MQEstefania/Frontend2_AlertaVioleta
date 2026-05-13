@@ -1,33 +1,32 @@
-// useState maneja estados
 import { useState } from 'react'
 
-// Navegación
-import { useNavigate } from 'react-router-dom'
+import {
 
-// Botón reutilizable
+  Link,
+  useNavigate
+
+} from 'react-router-dom'
+
 import BackButton from '../components/BackButton'
 
-// Servicio login
 import authService from '../services/authService'
 
-// Estilos
 import '../styles/forms.css'
 
 function UsuariaLogin() {
 
   const navigate = useNavigate()
 
-  // Estados formulario
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] =
+    useState({
 
-    email: '',
-    password: ''
-  })
+      email: '',
+      password: ''
+    })
 
-  // Estado error
-  const [error, setError] = useState('')
+  const [error, setError] =
+    useState('')
 
-  // Actualizar inputs
   const handleChange = (e) => {
 
     setFormData({
@@ -38,21 +37,19 @@ function UsuariaLogin() {
     })
   }
 
-  // Enviar formulario
   const handleSubmit = (e) => {
 
     e.preventDefault()
 
     try {
 
-      // Login
       authService.login(
 
         formData.email,
+
         formData.password
       )
 
-      // Ir dashboard
       navigate('/dashboard')
 
     } catch (err) {
@@ -63,66 +60,101 @@ function UsuariaLogin() {
 
   return (
 
-    <div className='form-container'>
+    <div className='auth-page'>
 
-      {/* Volver al inicio */}
-      <BackButton />
+      <div className='auth-card shadow-lg'>
 
-      <h1>🔐 Iniciar Sesión</h1>
+        <BackButton />
 
-      <p>
-        Accede a tu cuenta de Alerta Violeta.
-      </p>
+        <h1 className='auth-title'>
 
-      {/* Mostrar error */}
-      {error && (
+          🔐 Iniciar Sesión
 
-        <div className='error-message'>
+        </h1>
 
-          ⚠️ {error}
+        <p className='auth-subtitle'>
 
-        </div>
-      )}
+          Bienvenida a Alerta Violeta
 
-      <form onSubmit={handleSubmit}>
+        </p>
 
-        <div>
+        {
 
-          <label>
-            Correo electrónico:
-          </label>
+          error && (
 
-          <input
-            type='email'
-            name='email'
-            required
-            onChange={handleChange}
-          />
+            <div className='alert alert-danger'>
 
-        </div>
+              {error}
 
-        <div>
+            </div>
+          )
+        }
 
-          <label>
-            Contraseña:
-          </label>
+        <form onSubmit={handleSubmit}>
 
-          <input
-            type='password'
-            name='password'
-            required
-            onChange={handleChange}
-          />
+          <div className='mb-3'>
 
-        </div>
+            <label className='form-label'>
 
-        <button type='submit'>
+              Correo electrónico
 
-          Ingresar
+            </label>
 
-        </button>
+            <input
+              type='email'
+              name='email'
+              className='form-control'
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
 
-      </form>
+          </div>
+
+          <div className='mb-4'>
+
+            <label className='form-label'>
+
+              Contraseña
+
+            </label>
+
+            <input
+              type='password'
+              name='password'
+              className='form-control'
+              required
+              value={formData.password}
+              onChange={handleChange}
+            />
+
+          </div>
+
+          <button
+            className='btn btn-purple w-100'
+          >
+
+            Ingresar
+
+          </button>
+
+        </form>
+
+        <p className='text-center mt-4'>
+
+          ¿No tienes cuenta?
+
+          {' '}
+
+          <Link to='/registro'>
+
+            Regístrate
+
+          </Link>
+
+        </p>
+
+      </div>
 
     </div>
   )

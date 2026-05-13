@@ -1,73 +1,105 @@
-// Link permite navegar
 import { Link } from 'react-router-dom'
 
-// Importar logo
 import logo from '../assets/logo.png'
 
-// Importar estilos
 import '../styles/home.css'
 
 function Navbar() {
 
   return (
 
-    <>
+    <header className='header-fixed'>
 
-      {/* BARRA SUPERIOR */}
-      <header className='topbar'>
+      {/* TOPBAR */}
 
-        <nav>
+<div className='topbar'>
 
-          {/* Navegar login */}
-          <Link to='/login'>
-            👩 Usuarias
-          </Link>
+  <nav>
 
-          {/* Navegar profesionales */}
-          <Link to='/registro'>
-            👩‍⚕️ Profesionales
-          </Link>
+    <Link to='/login'>
 
-          {/* Navegar admin */}
-          <Link to='/admin'>
-            🔒 Administrador
-          </Link>
+      <button className='top-btn'>
 
-          {/* Navegar reportar */}
-          <Link to='/reportar'>
-            📢 Reportar
-          </Link>
+         Usuarias
 
-        </nav>
+      </button>
 
-      </header>
+    </Link>
 
-      {/* NAVBAR PRINCIPAL */}
-      <section className='navbar'>
+    <Link to='/registro'>
 
-        {/* Logo */}
+      <button className='top-btn'>
+
+         Registro
+
+      </button>
+
+    </Link>
+
+    <Link to='/admin'>
+
+      <button className='top-btn'>
+
+         Admin
+
+      </button>
+
+    </Link>
+
+    <Link to='/reportar'>
+
+      <button className='top-btn'>
+
+         Reportar
+
+      </button>
+
+    </Link>
+
+  </nav>
+
+</div>
+
+      {/* NAVBAR */}
+
+      <div className='navbar'>
+
         <img
           src={logo}
           alt='Logo'
           className='logo'
         />
 
-        {/* Botones menú */}
         <div className='menu-buttons'>
 
-          <button>Nosotras</button>
+          <a href='#nosotras'>
 
-          <button>Alianzas</button>
+            <button>
 
-          <button>Servicios</button>
+              Nosotras
+
+            </button>
+
+          </a>
+
+          <button>
+
+            Alianzas
+
+          </button>
+
+          <button>
+
+            Servicios
+
+          </button>
 
         </div>
 
-      </section>
+      </div>
 
-    </>
+    </header>
   )
 }
 
-// Exportar componente
 export default Navbar

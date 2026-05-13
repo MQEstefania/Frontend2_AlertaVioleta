@@ -1,6 +1,6 @@
-// Importar componentes
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import Nosotras from '../components/Nosotras'
 import Impacto from '../components/Impacto'
 import Redes from '../components/Redes'
 import Footer from '../components/Footer'
@@ -10,22 +10,12 @@ function Home() {
   return (
 
     <div>
-
-      {/* Barra navegación */}
       <Navbar />
-
-      {/* Banner principal */}
       <Hero />
-
-      {/* Impacto */}
+      <Nosotras />
       <Impacto />
-
-      {/* Redes */}
       <Redes />
-
-      {/* Footer */}
       <Footer />
-
     </div>
   )
 }

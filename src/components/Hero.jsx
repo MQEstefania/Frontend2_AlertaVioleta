@@ -1,10 +1,7 @@
-// Link para navegar
 import { Link } from 'react-router-dom'
 
-// Banner
 import banner from '../assets/banner.jpg'
 
-// Importar estilos
 import '../styles/home.css'
 
 function Hero() {
@@ -13,35 +10,68 @@ function Hero() {
 
     <section
       className='hero'
-
-      // Imagen de fondo dinámica
       style={{
-        backgroundImage: `url(${banner})`
+        backgroundImage:
+          `url(${banner})`
       }}
     >
 
-      {/* Capa oscura */}
-      <div className='overlay'>
+   <div className='overlay'>
 
-        <h1>Alerta Violeta</h1>
+  <h1>
 
-        <p>
-          Innovamos en protección y cuidado colectivo
-          para erradicar la violencia de género.
-        </p>
+    Alerta Violeta
 
-        {/* Botón registro */}
-        <Link to='/registro'>
+  </h1>
 
-          <button className='hero-btn'>
+  <div className='hero-text'>
+    <p>
 
-            ACTÚA AHORA
+      Transformamos la tecnología en
+      redes de cuidado.
 
-          </button>
+    </p>
 
-        </Link>
+    <p>
 
-      </div>
+      Alerta Violeta conecta mujeres,
+      profesionales y comunidades para
+      construir espacios más seguros,
+      humanos y solidarios frente a las
+      violencias basadas en género.
+
+    </p>
+
+    <p>
+
+      Este es un entorno donde la
+      tecnología se convierte en apoyo,
+      escucha y acompañamiento.
+
+      Aquí podrás acceder a orientación
+      profesional, reportar situaciones
+      de riesgo y encontrar recursos
+      pensados desde la protección y el 
+      bienestar colectivo.
+
+    </p>
+
+    <p className='hero-final'>
+
+      Porque ninguna mujer debería
+      sentirse sola frente a la violencia.
+
+    </p>
+
+  </div>
+
+  <button className='hero-btn'>
+
+    ACTÚA AHORA-REGÍSTRATE
+
+  </button>
+
+</div>
 
     </section>
   )
